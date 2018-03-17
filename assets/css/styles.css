@@ -1,0 +1,51 @@
+.post-date{
+  background: #f4f4f4;
+  padding: 4px;
+  marging: 3px;
+  display: block;
+}
+
+.post-thumbnail{
+  width: 250px;
+  height: 250px;
+  padding: 5px;
+
+}
+
+.cover-image{
+  width: 100%;
+
+}
+
+.cover-container{
+  max-height: 500px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.pagination-links{
+  margin: 30px 0;
+}
+
+.pagination-links strong{
+  padding: 8px 13px;
+  margin: 5px;
+  background: #f4f4f4;
+  border: 1px #ccc solid;
+}
+
+a.pagination-links{
+  padding: 8px 13px;
+  margin: 5px;
+  background: #f4f4f4;
+  border: 1px #ccc solid;
+}
+
+.cat-delete{
+  display: inline;
+}
+
+footer{
+  margin-bottom:50px;
+  text-align:center;
+ }
