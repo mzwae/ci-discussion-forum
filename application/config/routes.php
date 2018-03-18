@@ -52,9 +52,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 $route['home'] = 'pages/view/home';
 $route['about'] = 'pages/view/about';
-$route['default_controller'] = 'create';
+$route['default_controller'] = 'discussions';
 $route['404_override'] = '';
-$route['create'] = 'create/index';
-$route['(:any)'] = 'go/index';
+
 
 $route['translate_uri_dashes'] = FALSE;

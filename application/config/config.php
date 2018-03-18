@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 // $config['base_url'] = 'https://mzapps-ciblog.herokuapp.com/';
-$config['base_url'] = 'http://localhost:8080/ci-url-shortener';
+$config['base_url'] = 'http://localhost:8080/ci-discussion-forum';
 
 /*
 |--------------------------------------------------------------------------
@@ -325,7 +325,7 @@ $config['cache_query_string'] = FALSE;
 | https://codeigniter.com/user_guide/libraries/encryption.html
 |
 */
-$config['encryption_key'] = '';
+$config['encryption_key'] = 'secret';
 
 /*
 |--------------------------------------------------------------------------
