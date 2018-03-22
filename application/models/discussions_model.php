@@ -35,10 +35,12 @@ class Discussions_model extends CI_Model
         }
 
         $query .= " ORDER BY ds_created_at " . $dir;
-        $result = $this->db->query($query, array($dir));
+        $result = $this->db->query($query);
+        // echo $query . "<br>";
+
 
         if ($result) {
-          print_r($result->result_array());
+          // print_r($result->result_array());
             return $result;
         } else {
             return false;

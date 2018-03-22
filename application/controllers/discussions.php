@@ -17,6 +17,7 @@ class Discussions extends MY_Controller{
     if ($this->uri->segment(3)) {
       $filter = $this->uri->segment(4);
       $direction = $this->uri->segment(5);
+      $page_data['dir'] = $this->uri->segment(5);
     } else {
       $filter = null;
       $direction = null;

@@ -1,26 +1,31 @@
-SORT: <?php
-   echo anchor(
-     'discussions/index/sort/age/' . (($dir == 'ASC') ? 'DESC' : 'ASC'),
-     'Newest ' . (($dir == 'ASC') ? 'DESC' : 'ASC')
-   );
-?>
+
 
 <table class="table table-hover">
   <thead>
     <tr>
-      <th>Discussion Title</th>
+      <th>Users' Discussions - SORT: <?php
+         echo anchor(
+           'discussions/index/sort/age/' . (($dir == 'ASC') ? 'DESC' : 'ASC'),
+           'Newest ' . (($dir == 'ASC') ? 'DESC' : 'ASC')
+         );
+      ?></th>
+      <a href="discussions/index/sort/age/<?=(($dir=='ASC')?'DESC':'ASC')?>">
+        Newest2 <?=(($dir=='ASC')?'DESC':'ASC')?>
+      </a>
     </tr>
   </thead>
   <tbody>
-    <?php foreach($query->result() as $result) : ?>
+    <?php foreach($query->result() as $row) : ?>
       <tr>
         <td>
-          <a href="comments/index/<?=$result->ds_id?>">
-            <?=$result->title?> created by <?=$result->usr_name?>
+          <a href="comments/index/<?=$row->ds_id?>">
+            <b><?=$row->ds_title?></b>
+
+            <i><small>created by <?=$row->usr_name?> on <?=$row->ds_created_at?></small></i>
           </a>
-          <a href="discussions/flag/<?=$result->ds_id?>">Flag</a>
+          - <a href="discussions/flag/<?=$row->ds_id?>">Flag Discussion</a>
           <br>
-          <?=$result->ds_body?>
+          <?=$row->ds_body?>
         </td>
       </tr>
     <?php endforeach; ?>

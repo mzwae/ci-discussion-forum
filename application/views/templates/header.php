@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>URL Shortener</title>
+    <title>Discussion Forum</title>
     <link rel="stylesheet" href="<?php echo base_url();?>assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo base_url();?>assets/css/styles.css">
   </head>
