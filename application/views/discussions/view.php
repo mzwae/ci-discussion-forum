@@ -1,5 +1,4 @@
 
-
 <table class="table table-hover">
   <thead>
     <tr>
@@ -9,9 +8,7 @@
            'Newest ' . (($dir == 'ASC') ? 'DESC' : 'ASC')
          );
       ?></th>
-      <a href="discussions/index/sort/age/<?=(($dir=='ASC')?'DESC':'ASC')?>">
-        Newest2 <?=(($dir=='ASC')?'DESC':'ASC')?>
-      </a>
+
     </tr>
   </thead>
   <tbody>
