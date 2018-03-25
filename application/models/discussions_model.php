@@ -51,8 +51,10 @@ class Discussions_model extends CI_Model
     public function fetch_discussion($ds_id)
     {
         $query = "SELECT * FROM discussions, users WHERE ds_id = ? AND discussions.usr_id = users.usr_id";
+        $result = $this->db->query($query, array($ds_id));
+        print_r($result->result_array);
 
-        return $result = $this->db->query($query, array($ds_id));
+        return $result;
     }
 
     public function create($data)

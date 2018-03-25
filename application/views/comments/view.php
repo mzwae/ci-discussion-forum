@@ -5,7 +5,7 @@
     <br>
     <small>created by <?=$discussion_result->usr_name?> at <?=$discussion_result->ds_created_at?></small>
   </h2>
-  <p class="lead"><?=$disussion_result->ds_body?></p>
+  <p class="lead"><?=$discussion_result->ds_body?></p>
 <?php endforeach; ?>
 
 
