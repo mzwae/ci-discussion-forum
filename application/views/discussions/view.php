@@ -16,7 +16,7 @@
       <tr>
         <td>
           <a href="comments/index/<?=$row->ds_id?>">
-            <b><?=$row->ds_title?></b>
+            <b class="text-info"><?=$row->ds_title?></b>
 
             <i><small>created by <?=$row->usr_name?> on <?=$row->ds_created_at?></small></i>
           </a>

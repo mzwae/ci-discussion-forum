@@ -52,7 +52,7 @@ class Discussions_model extends CI_Model
     {
         $query = "SELECT * FROM discussions, users WHERE ds_id = ? AND discussions.usr_id = users.usr_id";
         $result = $this->db->query($query, array($ds_id));
-        print_r($result->result_array);
+        // print_r($result->result_array);
 
         return $result;
     }

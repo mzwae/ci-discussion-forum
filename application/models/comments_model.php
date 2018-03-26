@@ -29,28 +29,28 @@ class Comments_model extends CI_Model
     {
         // Check if the email entered already exists in the users table
         $usr_email = $data['usr_email'];
-        $query = "SELECT * FROM users WHERE usr_email = $usr_email";
-        $result = $this->db->query($query);
+        $query = "SELECT * FROM users WHERE usr_email = ?";
+        $result = $this->db->query($query, array($usr_email));
 
 
         // if it does, return the primary key
         if ($result->num_rows() > 0) {
             foreach ($result->result() as $row) {
-                $data['usr_id'] = $rows->usr_id;
+                $data['usr_id'] = $row->usr_id;
             }
         } else { // if not create a new user account and return the primary key
             $password = random_string('alnum', 16);
-            $hash = $this->encrypt->sha1($passowrd);
+            // $hash = $this->encrypt->sha1($passowrd);
 
             $user_data = array(
           'usr_email' => $data['usr_email'],
           'usr_name' => $data['usr_name'],
           'usr_is_active' => '1',
           'usr_level' => '1',
-          'usr_hash' => $hash
+          'usr_hash' => $password
         );
 
-            if ($this->db->insert('users', $usr_data)) {
+            if ($this->db->insert('users', $user_data)) {
                 $data['usr_id'] = $this->db->insert_id();
             }
         }

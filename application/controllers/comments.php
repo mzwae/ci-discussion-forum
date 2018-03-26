@@ -29,6 +29,46 @@ class Comments extends MY_Controller{
 
 
   }
+
+  public function add(){
+    $this->form_validation->set_rules('comment_name', 'User Name', 'required');
+    $this->form_validation->set_rules('comment_email', 'User Email', 'required');
+    $this->form_validation->set_rules('comment_body', 'Comment Body', 'required');
+
+    if ($this->form_validation->run() == false) {
+      echo "Error validating comment!!!";
+      $this->index();
+    } else {
+      $data = array(
+        'cm_body' => $this->input->post('comment_body'),
+        'usr_email' => $this->input->post('comment_email'),
+        'usr_name' => $this->input->post('comment_name'),
+        'ds_id' => $this->input->post('ds_id')
+      );
+      if ($this->Comments_model->new_comment($data)) {
+
+        redirect('comments/index/' . $data['ds_id']);
+        // echo "discussion id is " . $data['ds_id'];
+      } else {
+        // error
+        // load view and flash error message
+        echo "error adding comment!!!";
+      }
+
+    }
+
+  }
+
+  function flag(){
+    $cm_id = $this->uri->segment(4);
+    if ($this->Comments_model->flag($cm_id)) {
+      redirect('comments/index/' . $this->uri->segment(3));
+    } else {
+      // error
+      // load view and flash sess error
+    }
+
+  }
 }
 
  ?>
