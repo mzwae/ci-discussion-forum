@@ -5,7 +5,7 @@
       <th>Users' Discussions - SORT: <?php
          echo anchor(
            'discussions/index/sort/age/' . (($dir == 'ASC') ? 'DESC' : 'ASC'),
-           'Newest ' . (($dir == 'ASC') ? 'DESC' : 'ASC')
+           'Make Newest ' . (($dir == 'ASC') ? 'First' : 'Last')
          );
       ?></th>
 

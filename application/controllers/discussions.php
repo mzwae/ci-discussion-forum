@@ -21,7 +21,7 @@ class Discussions extends MY_Controller{
     } else {
       $filter = null;
       $direction = null;
-      $page_data['dir'] = 'ASC';
+      $page_data['dir'] = 'DESC';
     }
 
     $page_data['query'] = $this->Discussions_model->fetch_discussions($filter, $direction);
@@ -35,7 +35,7 @@ class Discussions extends MY_Controller{
 
   public function create(){
 
-    $this->form_validation->set_rules('usr_name', 'Username', 'required');
+    // $this->form_validation->set_rules('usr_name', 'Username', 'required');
     $this->form_validation->set_rules('usr_email', 'User Email', 'required');
     $this->form_validation->set_rules('ds_title', 'Discussion Title', 'required');
     $this->form_validation->set_rules('ds_body', 'Discussion Body', 'required');
@@ -43,7 +43,7 @@ class Discussions extends MY_Controller{
     if ($this->form_validation->run() == false) {
       // Load Views
       $this->load->view('templates/header');
-      $this->load->view('discussions/view', $page_data);
+      $this->load->view('discussions/new');
       $this->load->view('templates/footer');
     } else {
       $data = array(

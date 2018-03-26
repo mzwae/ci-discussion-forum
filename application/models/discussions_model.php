@@ -31,7 +31,7 @@ class Discussions_model extends CI_Model
           }
             }
         } else {
-            $dir = 'ASC';
+            $dir = 'DESC';
         }
 
         $query .= " ORDER BY ds_created_at " . $dir;
@@ -69,7 +69,7 @@ class Discussions_model extends CI_Model
             }
         } else {
             $password = random_string('alnum', 16);
-            $hash = $this->encrypt->sha1($password);
+            // $hash = $this->encrypt->sha1($password);
         }
 
         $user_data = array(
@@ -77,7 +77,7 @@ class Discussions_model extends CI_Model
           'usr_name' => $data['usr_name'],
           'usr_is_active' => '1',
           'usr_level' => '1',
-          'usr_hash' => $hash
+          'usr_hash' => $password
         );
 
         if ($this->db->insert('users', $user_data)) {
