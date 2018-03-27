@@ -35,7 +35,7 @@ class Discussions extends MY_Controller{
 
   public function create(){
 
-    // $this->form_validation->set_rules('usr_name', 'Username', 'required');
+    $this->form_validation->set_rules('usr_name', 'User Name', 'required');
     $this->form_validation->set_rules('usr_email', 'User Email', 'required');
     $this->form_validation->set_rules('ds_title', 'Discussion Title', 'required');
     $this->form_validation->set_rules('ds_body', 'Discussion Body', 'required');
