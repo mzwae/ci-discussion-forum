@@ -5,7 +5,7 @@
       <th>Users' Discussions - SORT: <?php
          echo anchor(
            'discussions/index/sort/age/' . (($dir == 'ASC') ? 'DESC' : 'ASC'),
-           'Make Newest ' . (($dir == 'ASC') ? 'First' : 'Last')
+           'Display Newest ' . (($dir == 'ASC') ? 'First' : 'Last')
          );
       ?></th>
 
@@ -15,12 +15,12 @@
     <?php foreach($query->result() as $row) : ?>
       <tr>
         <td>
-          <a href="comments/index/<?=$row->ds_id?>">
+          <a href="<?=base_url()?>comments/index/<?=$row->ds_id?>">
             <b class="text-info"><?=$row->ds_title?></b>
 
             <i><small>created by <?=$row->usr_name?> on <?=$row->ds_created_at?></small></i>
           </a>
-          - <a href="discussions/flag/<?=$row->ds_id?>">Flag Discussion</a>
+          - <a class="text-danger" href="<?=base_url()?>discussions/flag/<?=$row->ds_id?>">Flag Discussion</a>
           <br>
           <?=$row->ds_body?>
         </td>

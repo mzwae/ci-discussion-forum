@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 // $config['base_url'] = 'https://mzapps-ciblog.herokuapp.com/';
-$config['base_url'] = 'http://localhost:8080/ci-discussion-forum';
+$config['base_url'] = 'http://localhost:8080/ci-discussion-forum/';
 
 /*
 |--------------------------------------------------------------------------

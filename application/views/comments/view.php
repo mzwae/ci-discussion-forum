@@ -56,9 +56,9 @@
       <!-- <img src="<?=base_url()?>img/profile.svg" class="media-object"> -->
     </a>
     <div class="media-body">
-      <h4 class="media-heading"><?=$comment_result->usr_name?>
-        <a href="comments/flag/<?=$comment_result->ds_id?>/<?=$comment_result->cm_id?>">
-          - Flag Comment
+      <h4 class="media-heading"><?=$comment_result->usr_name?> -
+        <a class="text-danger" href="comments/flag/<?=$comment_result->ds_id?>/<?=$comment_result->cm_id?>">
+           Flag Comment
         </a>
       </h4>
       <p><?=$comment_result->cm_body?></p>
