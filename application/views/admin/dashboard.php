@@ -1,13 +1,17 @@
 <h1 id="tables" class="page-header">Dashboard</h1>
-
+<hr>
 <!-- Discussion moderation table -->
+<h3 class="text-info">Discussions Waiting Moderation</h3>
 <table class="table">
   <thead>
     <tr>
       <th>#</th>
-      <th>Name</th>
+      <th>Author</th>
       <th>Email</th>
-      <th>Actions</th>
+
+      <th>Discussion Title</th>
+      <th>Discussion Body</th>
+      <th>Action</th>
     </tr>
   </thead>
   <tbody>
@@ -17,17 +21,15 @@
           <td><?=$row->ds_id?></td>
           <td><?=$row->usr_name?></td>
           <td><?=$row->usr_email?></td>
+
+
+          <td ><?=$row->ds_title?></td>
+          <td><?=$row->ds_body?></td>
           <td>
             <?=anchor('admin/update_item/ds/allow/'.$row->ds_id, 'Allow') . ' ' . anchor('admin/update_item/ds/disallow/'.$row->ds_id, 'Disallow')?>
           </td>
         </tr>
-        <tr>
-          <td colspan="3"><?=$row->ds_title?></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td colspan="3"><?=$row->ds_body?></td>
-        </tr>
+
       <?php endforeach; ?>
     <?php else : ?>
       <tr>
@@ -38,6 +40,9 @@
 </table>
 
 <!-- Comment moderation table -->
+<hr>
+<h3 class="text-info">Comments Waiting Moderation</h3>
+
 <table class="table">
   <thead>
     <tr>
