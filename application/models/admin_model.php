@@ -29,12 +29,45 @@ class Admin_model extends CI_Model
         }
     }
 
-    public function update_comments()
+    public function update_comments($is_active, $id)
     {
+        if ($is_active == 1) {//Allow Comment to be displayed
+            $query = "UPDATE comments SET cm_is_active = ? WHERE cm_id = ?";
+            if ($this->db->query($query, array($is_active, $id))) {
+                return true;
+            } else {
+                return false;
+            }
+        } else { // Disallow comment and delete it from database
+            $query = "DELETE FROM comments WHERE cm_id = ?";
+            if ($this->db->query($query, array($id))) {
+                return true;
+            } else {
+                return false;
+            }
+        }
     }
 
-    public function update_discussions()
+    public function update_discussions($is_active, $id)
     {
+        if ($is_active == 1) {
+            $query = "UPDATE discussions SET ds_is_active = ? WHERE ds_id = ?";
+            if ($this->db->query($query, array($is_active, $id))) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            $query = "DELETE FROM discussions WHERE ds_id = ?";
+            if ($this->db->query($query, array($id))) {
+                $query = "DELETE FROM comments WHERE ds_id = ?";
+                if ($this->db->query($query, array($id))) {
+                    return true;
+                }
+            } else {
+                return false;
+            }
+        }
     }
 
     public function does_user_exist($email)

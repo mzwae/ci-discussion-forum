@@ -1,5 +1,5 @@
 <!-- Discussion - initial comment -->
-<?php foreach($discussion_query->result() as $discussion_result): ?>
+<?php foreach ($discussion_query->result() as $discussion_result): ?>
   <h2>
     <?=$discussion_result->ds_title?>
     <br>
@@ -50,16 +50,18 @@
 <hr>
 <div class="list-group col-md-5">
   <h3>Users' Comments...</h3>
-<?php foreach($comment_query->result() as $comment_result): ?>
+<?php foreach ($comment_query->result() as $comment_result): ?>
   <li class="media list-unstyled">
     <a href="#" class="pull-left">
       <!-- <img src="<?=base_url()?>img/profile.svg" class="media-object"> -->
     </a>
     <div class="media-body">
-      <h4 class="media-heading"><?=$comment_result->usr_name?> -
-        <a class="text-danger" href="comments/flag/<?=$comment_result->ds_id?>/<?=$comment_result->cm_id?>">
-           Flag Comment
+      <h4 class="media-heading"><?=$comment_result->usr_name?> - <small>added on <?=$comment_result->cm_created_at?></small>
+        <small>
+          <a class="text-danger" href="<?=base_url()?>comments/flag/<?=$comment_result->ds_id?>/<?=$comment_result->cm_id?>">
+           Flag
         </a>
+      </small>
       </h4>
       <p><?=$comment_result->cm_body?></p>
     </div>

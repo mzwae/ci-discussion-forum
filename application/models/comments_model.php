@@ -71,7 +71,7 @@ class Comments_model extends CI_Model
 
     public function flag($cm_id)
     {
-        $this->db->wehre('cm_id', $cm_id);
+        $this->db->where('cm_id', $cm_id);
         if ($this->db->update('comments', array('cm_is_active'=>'0'))) {
             return true;
         } else {

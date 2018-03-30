@@ -49,6 +49,7 @@
       <th>#</th>
       <th>Name</th>
       <th>Email</th>
+      <th>Flagged Comment</th>
       <th>Actions</th>
     </tr>
   </thead>
@@ -59,13 +60,11 @@
           <td><?=$row->cm_id?></td>
           <td><?=$row->usr_name?></td>
           <td><?=$row->usr_email?></td>
+
+          <td colspan="3"><?=$row->cm_body?></td>
           <td>
             <?=anchor('admin/update_item/cm/allow/'.$row->cm_id, 'Allow') . ' ' . anchor('admin/update_item/cm/disallow/'.$row->cm_id, 'Disallow')?>
           </td>
-        </tr>
-
-        <tr>
-          <td colspan="3"><?=$row->cm_body?></td>
         </tr>
       <?php endforeach; ?>
     <?php else : ?>

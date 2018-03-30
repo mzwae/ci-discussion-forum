@@ -20,7 +20,7 @@
 
             <i><small>created by <?=$row->usr_name?> on <?=$row->ds_created_at?></small></i>
           </a>
-          - <a class="text-danger" href="<?=base_url()?>discussions/flag/<?=$row->ds_id?>">Flag Discussion</a>
+          - <small><a class="text-danger" href="<?=base_url()?>discussions/flag/<?=$row->ds_id?>">Flag</a></small>
           <br>
           <?=$row->ds_body?>
         </td>

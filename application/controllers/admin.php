@@ -61,9 +61,9 @@ class Admin extends MY_Controller
 
     public function dashboard()
     {
-        // if ($this->session->userdata('logged_in') == false) {
-        //     redirect('admin/login');
-        // }
+        if ($this->session->userdata('logged_in') == false) {
+            redirect('admin/login');
+        }
 
         $page_data['comment_query'] = $this->Admin_model->dashboard_fetch_comments();
         $page_data['discussion_query'] = $this->Admin_model->dashboard_fetch_discussions();
@@ -75,9 +75,9 @@ class Admin extends MY_Controller
 
     public function update_item()
     {
-        // if ($this->session->userdata('logged_in') == false) {
-        //     redirect('admin/login');
-        // }
+        if ($this->session->userdata('logged_in') == false) {
+            redirect('admin/login');
+        }
 
         if ($this->uri->segment(4) == 'allow') {
             $is_active = 1;
@@ -91,6 +91,6 @@ class Admin extends MY_Controller
             $result = $this->Admin_model->update_comments($is_active, $this->uri->segment(5));
         }
 
-        redirect('admin');
+        redirect('admin/dashboard');
     }
 }
