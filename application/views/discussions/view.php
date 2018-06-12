@@ -2,7 +2,7 @@
 <table class="table table-hover">
   <thead>
     <tr>
-      <th>Users' Discussions - SORT: <?php
+      <th>Users' Discussions - SORT &uarr;&darr;: <?php
          echo anchor(
            'discussions/index/sort/age/' . (($dir == 'ASC') ? 'DESC' : 'ASC'),
            'Display Newest ' . (($dir == 'ASC') ? 'First' : 'Last')
