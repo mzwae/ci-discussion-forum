@@ -85,7 +85,7 @@ switch (ENVIRONMENT)
 
 	case 'production':
         $config['base_url'] = 'https://mzapps-ci-discussionforum.herokuapp.com/';
-        $hostname =  $_SERVER['HOSTNAME'];
+        $hostname = $_SERVER['HOSTNAME'];
         $username = $_SERVER['USERNAME'];
         $password = $_SERVER['PASSWORD'];
         $database = $_SERVER['DBNAME'];
