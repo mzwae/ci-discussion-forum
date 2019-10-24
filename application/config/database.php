@@ -73,14 +73,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $active_group = 'default';
 $query_builder = TRUE;
 
-witch (ENVIRONMENT)
+switch (ENVIRONMENT)
 {
 	case 'development':
-        $config['base_url'] = 'http://localhost:8080/ci-url-shortener';
+        $config['base_url'] = 'http://localhost:8080/ci-discussion-forum';
         $hostname = "localhost";
         $username = "root";
         $password = "123456";
-        $database = "urls";
+        $database = "discuss_forum";
 	break;
 
 	case 'production':
