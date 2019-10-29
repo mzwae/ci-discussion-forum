@@ -76,7 +76,6 @@ $query_builder = TRUE;
 switch (ENVIRONMENT)
 {
 	case 'development':
-        $config['base_url'] = 'http://localhost:8080/ci-discussion-forum';
         $hostname = "localhost";
         $username = "root";
         $password = "123456";
@@ -84,7 +83,6 @@ switch (ENVIRONMENT)
 	break;
 
 	case 'production':
-        $config['base_url'] = 'https://mzapps-ci-discussionforum.herokuapp.com/';
         $hostname = $_SERVER['HOSTNAME'];
         $username = $_SERVER['USERNAME'];
         $password = $_SERVER['PASSWORD'];
